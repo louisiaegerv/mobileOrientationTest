@@ -12,6 +12,7 @@
     <button id="orientationBtn" onclick="onClickOrientation()">orientationBtn</button>
     <div id="outputMotion">Motion Output goes here</div>
     <div id="outputOrientation">Orientation Output goes here</div>
+    
     <script>
         function onClickMotion() {
     // feature detect
@@ -41,8 +42,11 @@
         .then(permissionState => {
           if (permissionState === 'granted') {
             window.addEventListener('deviceorientation', (e) => {
+                let a = e.alpha; 
+                let b = e.beta;
+                let g = e.gamma; 
                 console.log(e);
-                document.getElementById("outputMotion").innerText = e;
+                document.getElementById("outputMotion").innerHTML = `${a}<br>${b}<br>${g}`;
             });
           }
         })
