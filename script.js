@@ -1,5 +1,6 @@
 function onClickMotion() {
     // feature detect
+    console.log("onClickMotion test");
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
       DeviceMotionEvent.requestPermission()
         .then(permissionState => {
@@ -14,6 +15,8 @@ function onClickMotion() {
   }
 
   function onClickOrientation() {
+    console.log("onClickOrientation test");
+      
     // feature detect
     if (typeof DeviceOrientationEvent.requestPermission === 'function') {
       DeviceOrientationEvent.requestPermission()
