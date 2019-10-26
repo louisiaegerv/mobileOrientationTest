@@ -5,34 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="script.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="output">Output goes here</div>
 </body>
-    <script>
-        alert("Script start");
-        DeviceMotionEvent.requestPermission()
-        .then(response => {
-        if (response == 'granted') {
-            window.addEventListener('devicemotion', (e) => {
-            // do something with e
-            console.log(e);
-            })
-        }
-        })
-        .catch(console.error)
-
-        DeviceOrientationEvent.requestPermission()
-        .then(response => {
-        if (response == 'granted') {
-            window.addEventListener('deviceorientation', (e) => {
-            // do something with e
-            console.log(e);
-            })
-        }
-        })
-        .catch(console.error)
-        
-        alert("Script end");        
-    </script>
 </html>
