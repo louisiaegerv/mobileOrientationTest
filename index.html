@@ -10,6 +10,7 @@
     <div class="output">Output goes here</div>
 </body>
     <script>
+        alert("Script start");
         DeviceMotionEvent.requestPermission()
         .then(response => {
         if (response == 'granted') {
@@ -31,5 +32,7 @@
         }
         })
         .catch(console.error)
+        
+        alert("Script end");        
     </script>
 </html>
