@@ -1,26 +1,29 @@
-alert("Script start");
-DeviceMotionEvent.requestPermission()
-.then(response => {
-if (response == 'granted') {
-    window.addEventListener('devicemotion', (e) => {
-        // do something with e
-        console.log(e);
-        document.getElementById("outputMotion").innerText = e;
-    })
-}
-})
-.catch(console.error)
+function onClickMotion() {
+    // feature detect
+    if (typeof DeviceMotionEvent.requestPermission === 'function') {
+      DeviceMotionEvent.requestPermission()
+        .then(permissionState => {
+          if (permissionState === 'granted') {
+            window.addEventListener('devicemotion', () => {});
+          }
+        })
+        .catch(console.error);
+    } else {
+      // handle regular non iOS 13+ devices
+    }
+  }
 
-DeviceOrientationEvent.requestPermission()
-.then(response => {
-if (response == 'granted') {
-    window.addEventListener('deviceorientation', (e) => {
-        // do something with e
-        console.log(e);
-        document.getElementById("outputOrientation").innerText = e;
-    })
-}
-})
-.catch(console.error)
-
-alert("Script end"); I
+  function onClickOrientation() {
+    // feature detect
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      DeviceOrientationEvent.requestPermission()
+        .then(permissionState => {
+          if (permissionState === 'granted') {
+            window.addEventListener('deviceorientation', () => {});
+          }
+        })
+        .catch(console.error);
+    } else {
+      // handle regular non iOS 13+ devices
+    }
+  }
