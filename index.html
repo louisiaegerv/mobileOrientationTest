@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="script.js" type="text/javascript"></script>
+    <title>Device Orientation Test</title>
 </head>
 <body>
-    <button id="motionBtn" onclick="onClickMotion()">motionBtn</button>
-    <button id="orientationBtn" onclick="onClickOrientation()">orientationBtn</button>
+    <button id="permissionBtn" onclick="requestPermission()">Request permission for iOS</button>
     <div id="outputMotion">Motion Output goes here</div>
     <div id="outputOrientation">Orientation Output goes here</div>
     
     <script>
+
+        function requestPermission(){
+onClickMotion();
+onClickOrientation();
+}
         function onClickMotion() {
     // feature detect
     console.log("onClickMotion test");
